@@ -1,8 +1,10 @@
+// STUDENT NAME: Alessandra Silva dos Reis * ID: 21565
+
 package com.company;
 
 import java.util.Scanner;
 
-import static com.company.banking.AppConstants.CUSTOMER_CREATE;
+import static com.company.AppConstants.CUSTOMER_CREATE;
 
 public class MenuBuilder {
 
@@ -31,9 +33,9 @@ public class MenuBuilder {
 
         System.out.println("-------------------------\n");
         System.out.println("1 - Login");
-        System.out.println("2 - customerMenuOption 2");
-        System.out.println("3 - customerMenuOption 3");
-        System.out.println("4 - customerMenuQuit");
+        System.out.println("2 - Transaction History");
+        System.out.println("3 - Transfer $");
+        System.out.println("4 - Logout");
 
         selection = input.nextInt();
         return selection;
@@ -41,22 +43,20 @@ public class MenuBuilder {
     }
 
     private static Customer AddCustomerForm() {
-        Scanner myObj = new Scanner(System.in);  // Create a Scanner object
+        Scanner myObj = new Scanner(System.in);
         System.out.println("Enter First Name");
 
-        String firstName = myObj.nextLine();  // Read user input
-        System.out.println("FirstName  is: " + firstName);  // Output user input
+        String firstName = myObj.nextLine();
+        System.out.println("FirstName  is: " + firstName);
 
-        String lastName = myObj.nextLine();  // Read user input
-        System.out.println("LastName  is: " + lastName);  // Output user input
+        String lastName = myObj.nextLine();
+        System.out.println("LastName  is: " + lastName);
 
         String email = myObj.nextLine();
         System.out.println("E-mail is: " + email);
 
-        // You might validate here.....
+       Customer customer = new Customer(firstName, lastName, email);
 
-        Customer customer = new Customer(firstName, lastName, email);
-        // And if happy /// create the customer
 
         return customer;
 
